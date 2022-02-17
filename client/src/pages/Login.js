@@ -18,6 +18,15 @@ function App() {
       }),
     })
     const data = await response.json()
+
+    if(data.user) {
+      alert('Login Successful')
+    }
+    else {
+      alert('Wrong Username Or Password!')
+      window.location.href = '/dashboard'
+    }
+
     console.log(data)
   }
 
@@ -37,7 +46,7 @@ function App() {
           type="password" 
           placeholder="Password" 
         />
-        <input type="submit" value="register" />
+        <input type="submit" value="Login" />
       </form>
     </div>
   );
